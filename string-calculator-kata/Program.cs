@@ -1,8 +1,8 @@
 ﻿namespace StringCalculatorKata;
 
-class Program
+public class StringCalculator
 {
-    static void Main()
+    public int Add(string numbers)
     {
     }
 }
