@@ -53,7 +53,7 @@ public class CalculatorTests
     [Fact]
     public void Step3ValidStringTest()
     {
-        new StringCalculator().Add("1\n2").Should().Be(3)
+        new StringCalculator().Add("1\n2").Should().Be(3);
     }
     
     [Fact]
@@ -61,5 +61,16 @@ public class CalculatorTests
     {
         var res = () => new StringCalculator().Add("1,\n2");
         res.Should().Throw<ArgumentException>();
+    }
+
+    [Theory]
+    [InlineData('-')]
+    [InlineData('+')]
+    [InlineData(';')]
+    public void Step4SimpleDelimiterTest(char delimiter)
+    {
+        var input = $"//{delimiter}\n1{delimiter}2\n3{delimiter}1";
+
+        new StringCalculator().Add(input).Should().Be(7);
     }
 }
