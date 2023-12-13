@@ -97,4 +97,18 @@ public class CalculatorTests
     {
         new StringCalculator().Add(input).Should().Be(output);
     }
+
+    public static TheoryData<string, int> NegativeValuesWithMinusDelimiterData =
+        new()
+        {
+            { "//-\n-1--2", -3 },
+            { "//-\n-10-3-5", -2 },
+        };
+
+    [Theory]
+    [MemberData(nameof(NegativeValuesWithMinusDelimiterData))]
+    public void NegativeValuesWithMinusDelimiterTest(string input, int output)
+    {
+        new StringCalculator().Add(input).Should().Be(output);
+    }
 }
