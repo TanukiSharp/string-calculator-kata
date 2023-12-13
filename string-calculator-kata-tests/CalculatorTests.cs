@@ -73,4 +73,11 @@ public class CalculatorTests
 
         new StringCalculator().Add(input).Should().Be(7);
     }
+    
+    [Fact]
+    public void Step4InValidStringTest()
+    {
+        var res = () => new StringCalculator().Add("//+\n1,2");
+        res.Should().Throw<ArgumentException>();
+    }
 }
