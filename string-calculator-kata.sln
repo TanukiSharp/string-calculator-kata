@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "string-calculator-kata", "string-calculator-kata.csproj", "{D6E6BE01-788A-45FE-A5F4-5C71E5DE4BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "string-calculator-kata-tests", "string-calculator-kata-tests\string-calculator-kata-tests.csproj", "{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string-calculator-kata-tests", "..\string-calculator-kata-tests\string-calculator-kata-tests.csproj", "{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "string-calculator-kata", "string-calculator-kata\string-calculator-kata.csproj", "{211903D2-774F-41D6-BEF2-A10FD1CB7C1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D6E6BE01-788A-45FE-A5F4-5C71E5DE4BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6E6BE01-788A-45FE-A5F4-5C71E5DE4BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6E6BE01-788A-45FE-A5F4-5C71E5DE4BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6E6BE01-788A-45FE-A5F4-5C71E5DE4BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC7F48C-A0A3-4471-BA9F-F1E24F9B8092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211903D2-774F-41D6-BEF2-A10FD1CB7C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211903D2-774F-41D6-BEF2-A10FD1CB7C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211903D2-774F-41D6-BEF2-A10FD1CB7C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211903D2-774F-41D6-BEF2-A10FD1CB7C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
