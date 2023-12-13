@@ -45,7 +45,7 @@ public class CalculatorTests
 
         for (int i = 0; i < randomInt-1; i++)
         {
-            input += "1;";
+            input += "1,";
         }
 
         input += 1;
