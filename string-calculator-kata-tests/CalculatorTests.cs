@@ -36,4 +36,17 @@ public class CalculatorTests
     {
         new StringCalculator().Add(input).Should().Be(output);
     }
+    
+    [Fact]
+    public void Step2RandomTest()
+    {
+        var randomInt = new Random().Next(100);
+        string input = "";
+        for (int i = 0; i < randomInt; i++)
+        {
+            input += "1";
+        }
+        
+        new StringCalculator().Add(input).Should().Be(randomInt);
+    }
 }
