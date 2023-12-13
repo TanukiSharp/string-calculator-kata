@@ -1,8 +1,13 @@
-﻿namespace StringCalculatorKata;
+﻿using System.Text.RegularExpressions;
 
-public class StringCalculator
+namespace StringCalculatorKata;
+
+public partial class StringCalculator
 {
-    private readonly char[] separators = [ ',', '\n' ];
+    private readonly char[] separators = [ '\n' ];
+    private readonly char defaultSeparator = ',';
+
+    private readonly Regex SeparatorFinderRegex = CreateSeparatorFinderRegex();
 
     public int Add(string numbers)
     {
@@ -18,7 +23,20 @@ public class StringCalculator
             return 0;
         }
 
-        string[] splitEntries = numbers.Split(separators, StringSplitOptions.TrimEntries);
+        Match separatorMatch = SeparatorFinderRegex.Match(numbers);
+
+        char separator = defaultSeparator;
+
+        if (separatorMatch.Success)
+        {
+            separator = separatorMatch.Groups[1].Value[0];
+            numbers = numbers[separatorMatch.Groups[0].Value.Length..];
+        }
+
+        string[] splitEntries = numbers.Split(
+            separators.Concat([separator]).ToArray(),
+            StringSplitOptions.TrimEntries
+        );
 
         if (splitEntries.Any(string.IsNullOrEmpty))
         {
@@ -27,11 +45,14 @@ public class StringCalculator
 
         if (splitEntries.Any(x => int.TryParse(x, out _) == false))
         {
-            throw new ArgumentException("Non-integer entry not allowed.", nameof(numbers));
+            throw new ArgumentException($"Non-integer entry not allowed. ({numbers})", nameof(numbers));
         }
 
         return splitEntries
             .Select(int.Parse)
             .Sum();
     }
+
+    [GeneratedRegex(@"^//(?<sep>.)\n")]
+    private static partial Regex CreateSeparatorFinderRegex();
 }
