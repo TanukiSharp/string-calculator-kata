@@ -83,4 +83,18 @@ public class CalculatorTests
         var res = () => new StringCalculator().Add("//+\n1,2");
         res.Should().Throw<ArgumentException>();
     }
+
+    public static TheoryData<string, int> NegativeValuesData =
+    new()
+    {
+        { "-1,-2", -3 },
+        { "-10,3,5", -2 },
+    };
+
+    [Theory]
+    [MemberData(nameof(NegativeValuesData))]
+    public void SupportNegativeValuesTest(string input, int output)
+    {
+        new StringCalculator().Add(input).Should().Be(output);
+    }
 }
