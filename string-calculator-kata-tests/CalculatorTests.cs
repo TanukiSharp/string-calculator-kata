@@ -49,4 +49,17 @@ public class CalculatorTests
         
         new StringCalculator().Add(input).Should().Be(randomInt);
     }
+
+    [Fact]
+    public void Step3ValidStringTest()
+    {
+        new StringCalculator().Add("1\n2").Should().Be(3)
+    }
+    
+    [Fact]
+    public void Step3InValidStringTest()
+    {
+        var res = () => new StringCalculator().Add("1,\n2");
+        res.Should().Throw<ArgumentException>();
+    }
 }
