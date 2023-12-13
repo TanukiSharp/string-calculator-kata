@@ -42,10 +42,13 @@ public class CalculatorTests
     {
         var randomInt = new Random().Next(100);
         string input = "";
-        for (int i = 0; i < randomInt; i++)
+
+        for (int i = 0; i < randomInt-1; i++)
         {
-            input += "1";
+            input += "1;";
         }
+
+        input += 1;
         
         new StringCalculator().Add(input).Should().Be(randomInt);
     }
